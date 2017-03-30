@@ -39,28 +39,28 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="copyBtn">
          <property name="text">
           <string>Конв.</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="toClpbBtn">
          <property name="text">
           <string>В буфер</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="dictBtn">
          <property name="text">
           <string>Словарь</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="depthBtn">
          <property name="maximumSize">
           <size>
            <width>50</width>
@@ -83,7 +83,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="quitBtn">
          <property name="text">
           <string>Виход</string>
          </property>
@@ -92,7 +92,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit"/>
+      <widget class="QPlainTextEdit" name="dataPlain"/>
      </item>
     </layout>
    </widget>
