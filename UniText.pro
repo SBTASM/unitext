@@ -16,12 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     row.cpp \
     dict.cpp \
-    serializelist.cpp
+    addrow.cpp
 
 HEADERS  += mainwindow.h \
     row.h \
     dict.h \
-    serializelist.h
+    addrow.h
 
 FORMS    += mainwindow.ui \
-    dict.ui
+    dict.ui \
+    addrow.ui

@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "row.h"
+
 namespace Ui {
 class Dict;
 }
@@ -18,8 +20,22 @@ public:
 private slots:
     void on_closeBtn_clicked();
 
+    void on_addBtn_clicked();
+
+    void on_saveBtn_clicked();
+
+public slots:
+    void updateList(QList<Row> *list);
+    void selectedItem(QString str);
+
+signals:
+    void showAddUI();
+    void saveDict();
+    void selectItem(QString);
+
 private:
     Ui::Dict *ui;
+
 };
 
 #endif // DICT_H

@@ -7,18 +7,24 @@ class Row
 {
 public:
     bool operator==(Row &row);
-    Row(char original, char replace);
+    bool operator==(QString &str);
 
-    void setOriginal(char original);
-    void setReplace(char replace);
+    friend QDataStream &operator<<(QDataStream &out, const Row &row);
+    friend QDataStream &operator>>(QDataStream &in, Row &row);
 
-    char getOriginal();
-    char getReplace();
+    Row(QChar original, QChar replace);
+    Row();
+
+    void setOriginal(QChar original);
+    void setReplace(QChar replace);
+
+    QChar getOriginal();
+    QChar getReplace();
 
     QString getFormat();
 
 private:
-    char original, replace;
+    QChar original, replace;
 };
 
 #endif // ROW_H
