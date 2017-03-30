@@ -2,6 +2,7 @@
 #include "ui_dict.h"
 
 #include "row.h"
+#include "listitem.h"
 
 Dict::Dict(QWidget *parent) :
     QDialog(parent),
@@ -9,8 +10,6 @@ Dict::Dict(QWidget *parent) :
 {
     ui->setupUi(this);
     setLayout(ui->main);
-
-    connect(ui->rowsList, SIGNAL(currentTextChanged(QString)), this, SLOT(selectedItem(QString)));
 }
 
 Dict::~Dict()
@@ -31,14 +30,11 @@ void Dict::on_addBtn_clicked()
 void Dict::updateList(QList<Row> *list)
 {
     ui->rowsList->clear();
-    for(QList<Row>::iterator i = list->begin(); i != list->end(); i++){
-        ui->rowsList->addItem(i->getFormat());
-    }
-}
 
-void Dict::selectedItem(QString str)
-{
-    emit selectItem(str);
+    for(QList<Row>::iterator i = list->begin(); i != list->end(); i++){
+        ListItem *itm = new ListItem(i->getFormat(), *i);
+        ui->rowsList->addItem(itm);
+    }
 }
 
 void Dict::on_saveBtn_clicked()

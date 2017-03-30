@@ -26,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent) :
             DictUI, SLOT(updateList(QList<Row>*)));
 
     connect(DictUI, SIGNAL(saveDict()), this, SLOT(saveDict()));
-    connect(DictUI, SIGNAL(selectItem(QString)), this, SLOT(selectItem(QString)));
 
     QFile file("dict.bin");
     bool e = file.open(QIODevice::ReadOnly);
@@ -113,7 +112,7 @@ void MainWindow::saveDict()
     }
 }
 
-void MainWindow::selectItem(QString item)
+void MainWindow::on_copyBtn_clicked()
 {
-    setWindowTitle(item);
+
 }

@@ -26,12 +26,10 @@ private slots:
 
 public slots:
     void updateList(QList<Row> *list);
-    void selectedItem(QString str);
 
 signals:
     void showAddUI();
     void saveDict();
-    void selectItem(QString);
 
 private:
     Ui::Dict *ui;

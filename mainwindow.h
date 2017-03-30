@@ -33,7 +33,8 @@ private slots:
 
     void saveDict();
 
-    void selectItem(QString item);
+    void on_copyBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QList<Row> *dictionary;
