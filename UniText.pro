@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     row.cpp \
-    dict.cpp
+    dict.cpp \
+    serializelist.cpp
 
 HEADERS  += mainwindow.h \
     row.h \
-    dict.h
+    dict.h \
+    serializelist.h
 
 FORMS    += mainwindow.ui \
     dict.ui

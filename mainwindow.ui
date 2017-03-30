@@ -67,6 +67,12 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="inputMask">
+          <string extracomment="Глубина"/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
         </widget>
        </item>
        <item>

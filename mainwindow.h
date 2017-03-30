@@ -20,6 +20,8 @@ private slots:
 
     void on_toClpbBtn_clicked();
 
+    void on_dictBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

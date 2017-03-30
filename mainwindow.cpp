@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dict.h"
 
 #include "row.h"
 
@@ -21,5 +22,9 @@ void MainWindow::on_pushButton_2_clicked(){
 }
 
 void MainWindow::on_toClpbBtn_clicked()
+{
+}
+
+void MainWindow::on_dictBtn_clicked()
 {
 }

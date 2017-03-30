@@ -15,6 +15,9 @@ public:
     explicit Dict(QWidget *parent = 0);
     ~Dict();
 
+private slots:
+    void on_closeBtn_clicked();
+
 private:
     Ui::Dict *ui;
 };
