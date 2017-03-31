@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     row.cpp \
     dict.cpp \
     addrow.cpp \
-    listitem.cpp
+    listitem.cpp \
+    textprocessor.cpp
 
 HEADERS  += mainwindow.h \
     row.h \
     dict.h \
     addrow.h \
-    listitem.h
+    listitem.h \
+    textprocessor.h
 
 FORMS    += mainwindow.ui \
     dict.ui \

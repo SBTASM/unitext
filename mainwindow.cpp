@@ -7,6 +7,7 @@
 #include <QFile>
 #include <qmath.h>
 #include <qmessagebox.h>
+#include <qclipboard.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -34,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QList<Row> tmp;
         QDataStream stream(&file);
         stream >> tmp;
-        setWindowTitle(tmp.begin()->getFormat());
+//        setWindowTitle(tmp.begin()->getFormat());
         dictionary = new QList<Row>(tmp);
     }
 
