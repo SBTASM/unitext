@@ -2,6 +2,7 @@
 #define DICT_H
 
 #include <QDialog>
+#include <QListWidget>
 
 #include "row.h"
 
@@ -19,20 +20,27 @@ public:
 
 private slots:
     void on_closeBtn_clicked();
-
     void on_addBtn_clicked();
-
     void on_saveBtn_clicked();
+
+    void selectRowElement(QListWidgetItem* item);
+
+    void on_deleteBtn_clicked();
 
 public slots:
     void updateList(QList<Row> *list);
+    void deleteRowElement(QList<Row> *dict, int index);
 
 signals:
     void showAddUI();
     void saveDict();
 
+    void selectRowListElement(QListWidgetItem* item);
+
 private:
     Ui::Dict *ui;
+    int index;
+    QList<Row> *dict;
 
 };
 

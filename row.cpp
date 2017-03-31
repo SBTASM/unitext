@@ -16,7 +16,7 @@ void Row::setReplace(QChar replace){ this->replace = replace; }
 QString Row::getFormat(){
     return QString::asprintf("%s(0x%.8X) ----> %s(0x%.8X)", QString(original).toStdString().c_str(), original, QString(replace).toStdString().c_str(), replace);
 }
-bool Row::operator ==(Row &row){
+bool Row::operator ==(const Row &row){
     if(this->original == row.original && this->replace == row.replace) return true;
     else return false;
 }

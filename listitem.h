@@ -11,10 +11,11 @@
 class ListItem : public QListWidgetItem
 {
 public:
-    ListItem(QString text, Row row);
+    ListItem(QString text, Row *row);
+    Row *getRow();
 
 private:
-    Row row;
+    Row *row;
 };
 
 #endif // LISTITEM_H

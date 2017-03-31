@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "dict.h"
+#include "listitem.h"
 
 #include "row.h"
 #include <QFile>
@@ -18,14 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     AddRowUI = new AddRow(this);
     DictUI = new Dict(this);
 
-    connect(AddRowUI, SIGNAL(avialableNewElement(Row*)),
-            this, SLOT(addDictElement(Row*)));
-
-    connect(DictUI, SIGNAL(showAddUI()), this, SLOT(showAddUI()));
-    connect(this, SIGNAL(updateList(QList<Row>*)),
-            DictUI, SLOT(updateList(QList<Row>*)));
-
-    connect(DictUI, SIGNAL(saveDict()), this, SLOT(saveDict()));
+    connections();
 
     QFile file("dict.bin");
     bool e = file.open(QIODevice::ReadOnly);
@@ -48,24 +42,41 @@ MainWindow::MainWindow(QWidget *parent) :
     file.close();
 }
 
+void MainWindow::connections()
+{
+    connect(AddRowUI, SIGNAL(avialableNewElement(Row*)),
+            this, SLOT(addDictElement(Row*)));
+
+    connect(DictUI, SIGNAL(showAddUI()), this, SLOT(showAddUI()));
+
+    connect(this, SIGNAL(updateList(QList<Row>*)),
+            DictUI, SLOT(updateList(QList<Row>*)));
+
+    connect(DictUI, SIGNAL(saveDict()), this, SLOT(saveDict()));
+
+    connect(DictUI, SIGNAL(sig_slectRowElement(QListWidgetItem*)),
+            this, SLOT(on_slectRowElement(QListWidgetItem*)));
+
+    connect(DictUI, SIGNAL(selectRowListElement(QListWidgetItem*)),
+            this, SLOT(slectRowListElement(QListWidgetItem*)));
+
+    connect(this, SIGNAL(selectRowElement(QList<Row>*,int)), DictUI, SLOT(deleteRowElement(QList<Row>*,int)));
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 void MainWindow::on_pushButton_2_clicked(){
 
 }
-
 void MainWindow::on_toClpbBtn_clicked()
 {
 }
-
 void MainWindow::on_dictBtn_clicked()
 {
     DictUI->show();
 }
-
 void MainWindow::addDictElement(Row *row)
 {
     for(QList<Row>::iterator i = dictionary->begin();
@@ -85,12 +96,10 @@ void MainWindow::addDictElement(Row *row)
     emit updateList(dictionary);
 
 }
-
 void MainWindow::showAddUI()
 {
     AddRowUI->show();
 }
-
 void MainWindow::saveDict()
 {
     QFile file("dict.bin");
@@ -111,8 +120,16 @@ void MainWindow::saveDict()
         msg.exec();
     }
 }
-
 void MainWindow::on_copyBtn_clicked()
 {
 
+}
+void MainWindow::slectRowListElement(QListWidgetItem *itm)
+{
+    ListItem *item = (ListItem*)itm;
+    Row *row = item->getRow();
+
+    int index = dictionary->indexOf(*row);
+
+    emit selectRowElement(dictionary, index);
 }

@@ -6,7 +6,7 @@
 class Row
 {
 public:
-    bool operator==(Row &row);
+    bool operator==(const Row &row);
     bool operator==(QString &str);
 
     friend QDataStream &operator<<(QDataStream &out, const Row &row);

@@ -35,14 +35,19 @@ private slots:
 
     void on_copyBtn_clicked();
 
+    void slectRowListElement(QListWidgetItem *itm);
+
 private:
     Ui::MainWindow *ui;
     QList<Row> *dictionary;
     Dict *DictUI;
     AddRow *AddRowUI;
 
+    void connections();
+
 signals:
     void updateList(QList<Row> *list);
+    void selectRowElement(QList<Row> *dict, int index);
 };
 
 #endif // MAINWINDOW_H
