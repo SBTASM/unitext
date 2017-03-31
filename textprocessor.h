@@ -9,7 +9,7 @@
 class TextProcessor
 {
 public:
-    TextProcessor(int Depth, QString string, QList<Row> *dict);
+    TextProcessor(QString string, QList<Row> *dict);
 
     QList<int>* getPositions();
     QString getString();
@@ -19,7 +19,6 @@ public:
     QList<int>* procesData(int Depth = 0);
 
 private:
-    int Depth;
     QList<int> *positions;
     QString string;
     QList<Match> *data;
