@@ -14,13 +14,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>526</width>
-      <height>261</height>
+      <x>16</x>
+      <y>16</y>
+      <width>435</width>
+      <height>229</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="main">
@@ -97,7 +97,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="dataPlain"/>
+      <widget class="QTextEdit" name="dataPlain"/>
      </item>
     </layout>
    </widget>

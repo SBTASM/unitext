@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "dict.h"
 #include "listitem.h"
+#include "textprocessor.h"
 
 #include "row.h"
 #include <QFile>
@@ -123,7 +124,28 @@ void MainWindow::saveDict()
 }
 void MainWindow::on_copyBtn_clicked()
 {
-    setWindowTitle("test");
+    QString text = ui->dataPlain->toPlainText();
+    TextProcessor *processor = new TextProcessor(10, text, dictionary);
+    QList<int> *positions = processor->procesData(0);
+    QStringList *buff = new QStringList;
+
+    for(QList<int>::iterator i = positions->begin(); i != positions->end(); i++){
+        buff->push_back(text.mid(*i, *(i+1) - *i));
+    }
+
+    ui->dataPlain->clear();
+    for(QList<QString>::iterator i = buff->begin(); i != buff->end(); i++){
+        QString element = i->mid(0, 1);
+        QString end = i->mid(1, i->length() - 1);
+
+        ui->dataPlain->setTextColor(QColor("red"));
+        ui->dataPlain->insertPlainText(element);
+        ui->dataPlain->setTextColor(QColor("blue"));
+        ui->dataPlain->insertPlainText(end);
+    }
+
+    ui->dataPlain->setTextColor(QColor("black"));
+
 }
 void MainWindow::slectRowListElement(QListWidgetItem *itm)
 {
