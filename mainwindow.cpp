@@ -123,7 +123,7 @@ void MainWindow::saveDict()
 }
 void MainWindow::on_copyBtn_clicked()
 {
-
+    setWindowTitle("test");
 }
 void MainWindow::slectRowListElement(QListWidgetItem *itm)
 {

@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     dict.cpp \
     addrow.cpp \
     listitem.cpp \
-    textprocessor.cpp
+    textprocessor.cpp \
+    match.cpp
 
 HEADERS  += mainwindow.h \
     row.h \
     dict.h \
     addrow.h \
     listitem.h \
-    textprocessor.h
+    textprocessor.h \
+    match.h
 
 FORMS    += mainwindow.ui \
     dict.ui \

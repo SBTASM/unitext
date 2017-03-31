@@ -46,13 +46,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="toClpbBtn">
-         <property name="text">
-          <string>В буфер</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QPushButton" name="dictBtn">
          <property name="text">
           <string>Словарь</string>
