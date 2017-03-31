@@ -18,6 +18,7 @@ QList<int>* TextProcessor::getPositions(){ return positions; }
 QList<int>* TextProcessor::procesData(int Depth){
     int org_Depth = 0, position = 0;
     if(Depth > 0){org_Depth = this->Depth; this->Depth = Depth; }
+
     for(QString::iterator i = string.begin(); i != string.end(); i++, position++){
         for(QList<Row>::iterator j = dict->begin(); j != dict->end(); j++){
             if(*i == j->getOriginal()){
@@ -27,8 +28,14 @@ QList<int>* TextProcessor::procesData(int Depth){
         }
     }
 
-    data->first().work();
 
+
+    for(QList<Match>::iterator i = data->begin(); i != data->end(); i++){
+
+    }
+
+
+    if(org_Depth > 0) this->Depth =  org_Depth;
     return positions;
 }
 

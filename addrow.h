@@ -20,6 +20,12 @@ public:
 private slots:
     void on_addBtn_clicked();
 
+    void on_orgEdt_textChanged(const QString &arg1);
+
+    void on_repEdt_textChanged(const QString &arg1);
+
+    void on_cancleBtn_clicked();
+
 signals:
     void avialableNewElement(Row *row);
 
