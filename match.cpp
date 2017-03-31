@@ -20,7 +20,7 @@ void Match::setReplace(QChar rep){ replace = rep; }
 void Match::setString(QString *str){ string = str; }
 
 bool Match::work(){
-    string[position] = replace;
+    string->replace(position, 1, replace);
     return true;
 }
 bool Match::cancel(){

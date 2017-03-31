@@ -27,7 +27,7 @@ QList<int>* TextProcessor::procesData(int Depth){
         }
     }
 
-    if(org_Depth > 0) this->Depth = org_Depth;
+    data->first().work();
 
     return positions;
 }
