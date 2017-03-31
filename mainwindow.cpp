@@ -158,3 +158,8 @@ void MainWindow::slectRowListElement(QListWidgetItem *itm)
 
     emit selectRowElement(dictionary, index);
 }
+
+void MainWindow::on_quitBtn_clicked()
+{
+    QApplication::quit();
+}

@@ -37,6 +37,8 @@ private slots:
 
     void slectRowListElement(QListWidgetItem *itm);
 
+    void on_quitBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QList<Row> *dictionary;
