@@ -3,6 +3,7 @@
 
 #include <qdebug.h>
 #include <quuid.h>
+#include <time.h>
 
 TextProcessor::TextProcessor(QString string, QList<Row> *dict)
 {
