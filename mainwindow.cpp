@@ -127,34 +127,12 @@ void MainWindow::on_copyBtn_clicked()
     int Depth = atoi(ui->depthEdt->text().toStdString().c_str());
     QString text = ui->dataPlain->toPlainText();
     TextProcessor *processor = new TextProcessor(text, dictionary);
-    QList<int> *positions = processor->procesData(Depth);
-//    text = processor->getString();
-
-    ui->dataPlain->clear();
-
-//    ui->dataPlain->setPlainText(text);
-
-
-    ui->dataPlain->clear();
-
+    processor->procesData(Depth);
     text = processor->getString();
 
+    ui->dataPlain->clear();
 
-    for(int counter = 0; counter < text.length(); counter++){
-        QList<int>::iterator i = positions->begin();
-        for(; i != positions->end(); i++){
-            if(*i == counter){
-                ui->dataPlain->setTextColor(QColor(255, 0, 0));
-                ui->dataPlain->insertPlainText(QString(text[counter]));
-                ui->dataPlain->setTextColor(QColor(0, 0, 0));
-            }
-        }
-        if(*i != counter){
-            ui->dataPlain->insertPlainText(QString(text[counter]));
-        }
-    }
-
-//    ui->dataPlain->setPlainText(text);
+    ui->dataPlain->setPlainText(text);
 }
 void MainWindow::slectRowListElement(QListWidgetItem *itm)
 {
